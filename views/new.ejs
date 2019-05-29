@@ -1,0 +1,27 @@
+<% include ./partials/header %>
+
+<div class="ui container main">
+    <h1 class="ui huge header">Insert new meme</h1>
+    <form class="ui form" action="/posts" method="POST">
+        <div class="field">
+            <label>Title</label>
+            <input type="text" name="post[title]" placeholder="Titulo do meme">
+        </div>
+        <div class="field">
+            <label>Image</label>
+            <input type="text" name="post[image]" placeholder="Imagem do meme">
+        </div>
+        <div class="field">
+            <label>Video</label>
+            <input type="text" name="post[video]" placeholder="Link do video do meme">
+        </div>
+        <div class="field">
+            <label>Dialog</label>
+            <textarea name="post[dialog]" placeholder="Dialogo do meme"></textarea>
+        </div>
+        <button class="ui green button" type="submit">Enviar</button>
+    </form>
+</div>
+
+
+<% include ./partials/footer %>

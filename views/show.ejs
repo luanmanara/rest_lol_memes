@@ -1,0 +1,30 @@
+<% include ./partials/header %>
+
+<div class="ui container">
+        <div class="ui fluid card">
+            <div class="image">
+                <img src="<%= post.image %>">
+            </div>
+            <div class="content">
+                <a href="/posts/<%= post._id %>" class="header"><%= post.title %></a>
+                <div class="meta">
+                    <span><%= post.created.toDateString() %></span>
+                </div>
+                <div class="description">
+                    <p><%= post.dialog %></p>
+                    <p>
+                        <iframe width="600" height="400" src="<%= post.video.replace(/watch\?v\=/g, 'embed/') %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </p>
+                </div>
+            </div>
+            <div class="extra content">
+                <a href="/posts/<%= post._id %>/edit" class="ui green inverted button">Edit</a>
+                <form id="deleteForm" action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+                    <button class="ui red inverted button" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ./partials/footer %>
